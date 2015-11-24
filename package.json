@@ -1,0 +1,31 @@
+{
+  "name": "algorithms",
+  "version": "0.0.1",
+  "description": "Collection of base algorithms.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jshint --config .jshintrc lib test && jscs lib test && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nkapliev/algorithms.git"
+  },
+  "devDependencies": {
+    "jscs": "2.6.x",
+    "jshint": "^2.8.0",
+    "mocha": "2.3.3",
+    "chai": "3.4.1"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "Nikolay Kapliev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nkapliev/algorithms/issues"
+  },
+  "homepage": "https://github.com/nkapliev/algorithms"
+}

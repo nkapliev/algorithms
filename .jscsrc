@@ -1,0 +1,36 @@
+{
+  "preset": "yandex",
+  "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~"],
+
+  "disallowMultipleVarDecl": null,
+
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+
+  "disallowSpacesInsideParentheses": null,
+
+  "disallowSpacesInsideObjectBrackets": null,
+  "requireSpacesInsideObjectBrackets": "all",
+
+  "disallowSpacesInsideArrayBrackets": null,
+  "requireSpacesInsideArrayBrackets": "all",
+
+  "disallowQuotedKeysInObjects": null,
+
+  "disallowImplicitTypeConversion": ["string"],
+
+  "validateIndentation": null,
+
+  "validateParameterSeparator": ", ",
+
+  "requireDotNotation": null,
+  "requireSpaceAfterLineComment": null,
+  "validateQuoteMarks": { "mark": "'", "escape": true },
+  "excludeFiles": [
+    ".git",
+    ".npm",
+
+    "node_modules"
+  ]
+}

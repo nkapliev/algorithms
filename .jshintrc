@@ -1,0 +1,128 @@
+{
+  // ENFORCING OPTIONS
+
+  // This option prohibits the use of bitwise operators such as ^ (XOR), | (OR) and others.
+  "bitwise": true,
+
+  // This option requires you to always put curly braces around blocks in loops and conditionals.
+  "curly": true,
+
+  // This options prohibits the use of == and != in favor of === and!==.
+  "eqeqeq": true,
+
+  // This option requires all for in loops to filter object's items.
+  "forin": true,
+
+  // This option suppresses warnings about declaring variables inside of control structures
+  // while accessing them later from the outside.
+  "funcscope": false,
+
+  // This option enables warnings about the use of identifiers which are defined in future
+  // versions of JavaScript.
+  "futurehostile": true,
+
+  // This option suppresses warnings about the use of global strict mode.
+  "globalstrict": false,
+
+  // This option suppresses warnings about the __iterator__ property.
+  "iterator": false,
+
+  // This option prohibits the use of a variable before it was defined.
+  // Setting to "nofunc" allows function declarations to be ignored.
+  "latedef": "nofunc",
+
+  // This option lets you control how nested do you want your blocks tobe.
+  "maxdepth": 5,
+
+  // This option lets you set the max number of formal parameters allowed per function.
+  //"maxparams": 5,
+
+  // This option prohibits the use of arguments.caller and arguments.callee.
+  "noarg": true,
+
+  // This option prohibits the use of constructor functions for side-effects.
+  "nonew": false,
+
+  // This option suppresses warnings about variableshadowing i.e. declaring a variable
+  // that had been already declared somewhere in the outer scope.
+  "shadow": false,
+
+  // This option prohibits the use of the grouping operator when it is not strictly required.
+  "singleGroups": false,
+
+  // This option prohibits the use of explicitly undeclared variables.
+  "undef": true,
+
+  // This option warns when you define and never use your variables.
+  "unused": true,
+
+  // RELAXING OPTIONS
+
+  // This option suppresses warnings about missing semicolons.
+  "asi": false,
+
+  // This option suppresses warnings about the use of assignments in cases where comparisons are expected.
+  "boss": false,
+
+  // This option suppresses warnings about the debugger statements in your code.
+  "debug": false,
+
+  // This option suppresses warnings about == null comparisons.
+  "eqnull": false,
+
+  // This option tells JSHint that your code uses ES.next specific features such as const.
+  "esnext": false,
+
+  // This option suppresses warnings about the use of eval.
+  "evil": false,
+
+  // This option suppresses warnings about the use of expressions where normally
+  // assignments or function calls expected.
+  "expr": true,
+
+  // This option suppresses warnings about missing semicolons, but only when the semicolon is omitted
+  // for the last statement in a one-line block.
+  "lastsemic": false,
+
+  // This option suppresses warnings about functions inside of loops.
+  "loopfunc": false,
+
+  // This option prohibits the use of unary increment and decrement operators.
+  "plusplus": false,
+
+  // This option suppresses warnings about the __proto__ property.
+  "proto": false,
+
+  // This option suppresses warnings about the use of script-targeted URLs—such as javascript:...
+  "scripturl": false,
+
+  // This option requires all functions to run in EcmaScript 5's strict mode.
+  "strict": false,
+
+  // This option suppresses warnings about "weird" constructions like new function () { ... } and newObject.
+  "supernew": false,
+
+  // This option suppresses warnings about possible strictviolations when the code is running
+  // in strict mode and you use this in a non-constructor function.
+  "validthis": false,
+
+  // This option suppresses warnings about the use of the with statement.
+  "withstmt": false,
+
+  // ENVIRONMENTS
+
+  // This option defines globals exposed by modern browsers: all the way from good old document and navigator
+  // to the HTML5 FileReader and other new developments in the browser world.
+  "browser": true,
+
+  // This option defines globals available when your code is running inside of the Node runtime environment.
+  "node": true,
+
+  // OBSOLETE OPTIONS
+
+  // This option prohibits the use of unsafe . in regular expressions.
+  "regexp": false,
+
+  // This option suppresses warnings about unescaped - in the end of regular expressions.
+  "regexdash": false
+}

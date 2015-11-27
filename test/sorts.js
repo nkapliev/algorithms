@@ -3,27 +3,43 @@ var PATH_TO_SORTS = 'lib/sorts';
 
 var assert = require('chai').assert,
     utils = require('./lib/utils.js'),
-    lists = require('./data/lists.js');
-
-var sortsNames = require('fs').readdirSync(PATH_TO_SORTS),
+    listsHash = require('./data/lists.js'),
+    listsNames = Object.keys(lists),
+    sortsNames = require('fs').readdirSync(PATH_TO_SORTS),
     sortsHash = sortsNames.reduce(function(hash, sortName) {
         hash[sortName] = require('../' + PATH_TO_SORTS + '/' + sortName);
 
         return hash;
     }, {});
 
-var listsNames = Object.keys(lists),
-    tests = listsNames.map(function(listName) {
-        var shouldTestMessage = 'should properly sort ' + listName.toLowerCase().replace('_', ' ') + ' list';
+var tests = {
+        simple: {
+            sorts: [ 'bubble', 'insertion', 'selection' ],
+            lists: [  ],
+            run: function(sortName) {
 
-        return function(sort) {
-            it(shouldTestMessage, function() {
-                var originalList = lists[listName],
-                    sortedList = sort([].concat(originalList));
+
+                var originalList = listsHash[listName],
+                    sortedList = sortsHash[sortName].sort([].concat(originalList));
 
                 assert.lengthOf(sortedList, originalList.length);
                 assert.sameMembers(sortedList, originalList);
                 assert.isTrue(utils.isSortedAsc(sortedList));
+            }
+        },
+        stable: function() {
+
+        }
+    };
+
+var simpleTest = ,
+    stableTest = ,
+    testsMessages = listsNames.map(function(listName) {
+        var shouldTestMessage = 'should properly sort ' + listName.toLowerCase().replace('_', ' ') + ' list';
+
+        return function(sort) {
+            it(shouldTestMessage, function() {
+                simpleTest();
             });
         };
     });
@@ -31,11 +47,12 @@ var listsNames = Object.keys(lists),
 describe('sorts', function() {
     sortsNames.forEach(function(sortName) {
         describe(sortName, function() {
-            var sortFn = sortsHash[sortName];
-
-            tests.forEach(function(test) {
-                test(sortFn);
+            Object.keys(tests).forEach(function(testName) {
+                tests[testName]
             });
+
+
+
         });
     });
 });

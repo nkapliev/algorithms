@@ -19,7 +19,7 @@ describe('sorts', function() {
     sortsNames.forEach(function(sortName) {
         describe(sortName, function() {
             listsNames.forEach(function(listName) {
-                it('should properly sort ' + listName.toLowerCase().replace('_', ' ') + ' list', function() {
+                it('should properly sort list ' + listName, function() {
                     var originalList = lists[listName],
                         sortedList = sortsHash[sortName]([].concat(originalList));
 

@@ -1,8 +1,9 @@
 /* global describe, it */
+require('../tools/utils.js');
+
 var PATH_TO_SORTS = 'lib/sorts';
 
 var assert = require('chai').assert,
-    utils = require('./lib/utils.js'),
     lists = require('./data/lists.js');
 
 var sortsNames = require('fs').readdirSync(PATH_TO_SORTS),
@@ -12,29 +13,20 @@ var sortsNames = require('fs').readdirSync(PATH_TO_SORTS),
         return hash;
     }, {});
 
-var listsNames = Object.keys(lists),
-    tests = listsNames.map(function(listName) {
-        var shouldTestMessage = 'should properly sort ' + listName.toLowerCase().replace('_', ' ') + ' list';
-
-        return function(sort) {
-            it(shouldTestMessage, function() {
-                var originalList = lists[listName],
-                    sortedList = sort([].concat(originalList));
-
-                assert.lengthOf(sortedList, originalList.length);
-                assert.sameMembers(sortedList, originalList);
-                assert.isTrue(utils.isSortedAsc(sortedList));
-            });
-        };
-    });
+var listsNames = Object.keys(lists);
 
 describe('sorts', function() {
     sortsNames.forEach(function(sortName) {
         describe(sortName, function() {
-            var sortFn = sortsHash[sortName];
+            listsNames.forEach(function(listName) {
+                it('should properly sort ' + listName.toLowerCase().replace('_', ' ') + ' list', function() {
+                    var originalList = lists[listName],
+                        sortedList = sortsHash[sortName]([].concat(originalList));
 
-            tests.forEach(function(test) {
-                test(sortFn);
+                    assert.lengthOf(sortedList, originalList.length);
+                    assert.sameMembers(sortedList, originalList);
+                    assert.isTrue(sortedList.isSortedAsc());
+                });
             });
         });
     });

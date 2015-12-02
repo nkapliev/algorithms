@@ -3,7 +3,12 @@ if ( ! Array.prototype.hasOwnProperty('swap')) {
         function(i, j) {
             var swapElem;
 
-            if (i < this.length && j < this.length) {
+            if (
+                i >= 0 &&
+                j >= 0 &&
+                i < this.length &&
+                j < this.length
+            ) {
                 swapElem = this[i];
                 this[i] = this[j];
                 this[j] = swapElem;

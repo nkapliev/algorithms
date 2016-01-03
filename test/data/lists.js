@@ -2,7 +2,7 @@
  * @type {Object} Hash of Number[]
  */
 module.exports = {
-    'with no elements': [],
+    'empty': [],
     'with length 1': [ 1 ],
     'with length 2': [ 2, 1 ],
     'with length 3': [ 3, 1, 2 ],
